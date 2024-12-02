@@ -12,17 +12,17 @@ func _process(delta: float) -> void:
 
 
 func _on_button_button_down() -> void:
-	if $AudioStreamPlayer2D.playing:
+	if $AudioStreamPlayer.playing:
 		$Button.text = "Play"
-		$AudioStreamPlayer2D.stop()
+		$AudioStreamPlayer.stop()
 	else:
 		$Button.text = "Stop"
-		$AudioStreamPlayer2D.play()
+		$AudioStreamPlayer.play()
 	pass # Replace with function body.
 
 
 func _on_h_slider_value_changed(value: float) -> void:
-	$AudioStreamPlayer2D.pitch_scale = value
+	$AudioStreamPlayer.pitch_scale = value
 	pass # Replace with function body.
 
 
@@ -48,5 +48,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 
 
 func _on_h_slider_3_value_changed(value: float) -> void:
+	
+	
 	$drum_looper/Timer.wait_time = remap(value, 0, 100, 5, 0.01)
 	pass # Replace with function body.

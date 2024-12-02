@@ -5,6 +5,8 @@ var steps = 16
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# get the number of different sounds I can  play
+	# these are added in the editor
 	num_samples = get_child_count() - 1
 	
 	for i in range(steps):
@@ -51,6 +53,6 @@ func _on_button_2_button_down() -> void:
 	current = current + 1
 	
 	if current == steps:
-		current = 0;
+		current = 0
 	
 	pass # Replace with function body.
